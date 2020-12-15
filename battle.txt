@@ -1,0 +1,37 @@
+import random
+import time
+from choose import choosen, choosen_next
+
+
+def starcie(player, player2):
+    round = 1
+    while True:
+        print(f"Starcie {round} !")
+        if random.randint(0, 1) == 0:
+            print(f"walkę zaczyna {player.name}!")
+            fight(player, player2)
+        else:
+            print(f"walkę zaczyna {player2.name}!")
+            fight(player2, player)
+
+
+        time.sleep(5)
+        round += 1
+
+
+def fight(x,y):
+    print(f"{x.name} co chcesz zrobić? 1 - Atak bez broni")
+    f1 = int(input("Twój wybór: "))
+    if f1 == 1:
+        y.health -= (y.strength - x.attack())
+        print(f"{x.name} zadał {y.name} {y.strength - x.hit_points} punktów obrażen")
+    print(f"{y.name} co chcesz zrobić? 1 - Atak bez broni")
+    f2 = int(input("Twój wybór: "))
+    if f2 == 1:
+        x.health -= (x.strength - y.attack())
+        print(f"{y.name} zadał {x.name} {x.strength - y.hit_points} punktów obrażen")
+
+
+
+if __name__ == '__main__':
+    starcie(choosen(), choosen_next())

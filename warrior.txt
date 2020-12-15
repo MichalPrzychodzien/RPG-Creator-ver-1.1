@@ -1,0 +1,46 @@
+from race1 import Human
+from race2 import Elf
+from race3 import Dwarf
+from race4 import Orc
+import random
+class Warrior(Human, Elf, Dwarf, Orc):
+    def __init__(self, name, age, sex, land):
+        Human.__init__(self, name, age, sex, land)
+        self.name = name
+        self.age = age
+        self.sex = sex
+        self.land = land
+        self.white_wepon_points = 0
+        self.armour_point = 0
+
+    def stats(self):
+        print(f"Twoja siła wynosi: {self.power} punktów, wytrzymałość {self.strength}, masz {self.skill} punktów zręcznosci,"
+              f"intelekt szacuję na {self.intelligence} punktów, ostrozność {self.caution} punktów. Charyzma to {self.charisma}"
+              f"punktów, a życia pozostało Ci {self.health} punktów")
+
+    def info(self):
+        print(f"Mężny {self.name}, przybyły z {self.land}, zyje i walczy {self.age} lat")
+
+    def deffence(self):
+        self.health += 5
+        self.strength += 20
+
+    def prey(self):
+        self.health += 15
+
+
+
+    def attack_with_wepon(self):
+        pass
+
+    def attack_with_range(self):
+        pass
+
+    def special_attack(self):
+        pass
+
+    def stilalive(self):
+        if self.health >= 0:
+            return True
+        else:
+            return False

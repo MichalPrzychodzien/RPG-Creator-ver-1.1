@@ -1,0 +1,99 @@
+from race1 import Human
+from race2 import Elf
+from race3 import Dwarf
+from race4 import Orc
+from palladyn import Palladyn
+from warrior import Warrior
+
+
+def choosen():
+    global player
+    x = int(input(f"Pierwszy gracz, jaka wybierasz rasę? 1 - Człowiek, 2 - Elf, 3 - Krasnolud, 4 - Ork: "))
+    if x == 1:
+        player = Human
+        print("Brawo, będziesz pokrętnym, zdradzieckim, dwulicowym człowiekiem. Mozesz wybrać 1 - Palladyn, 2 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player = Palladyn(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "), input("skąd pochodzisz: "))
+        elif profession == 2:
+            player = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                              input("skąd pochodzisz: "))
+
+    elif x == 2:
+        player = Elf
+        print("Gratuluję wyboru! Samolubny, wyniosły i zarozumiały. Pyszłakowaty Elf, cały Ty. Możesz wybrać: 1 - Warrior, ")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                              input("skąd pochodzisz: "))
+        elif profession == 2:
+            pass
+
+    elif x == 3:
+        player = Dwarf
+        print("uparty jak osioł, hamski kurdupel. Wypisz wymaluj krasnolud. Możesz wybrać: 1 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                             input("skąd pochodzisz: "))
+        elif profession == 2:
+            pass
+
+    elif x == 4:
+        player = Orc
+        print("nie ma sensu komentowac. Bezmózga kupa dyszącego mięcha zwana orkiem. Możesz wybrać: 1 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                             input("skąd pochodzisz: "))
+        elif profession == 2:
+            pass
+
+    return player
+
+
+def choosen_next():
+    global player2
+    y = int(input(f"Drugi gracz, jaka wybierasz rasę? 1 - Człowiek, 2 - Elf, 3 - Krasnolud, 4 - Ork: "))
+    if y == 1:
+        player2 = Human
+        print("Brawo, będziesz pokrętnym, zdradzieckim, dwulicowym człowiekiem. Mozesz wybrać: 1 - Palladyn, 2 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player2 = Palladyn(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                              input("skąd pochodzisz: "))
+        elif profession == 2:
+            player2 = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                             input("skąd pochodzisz: "))
+
+    elif y == 2:
+        player2 = Elf
+        print("Gratuluję wyboru! Samolubny, wyniosły i zarozumiały. Pyszłakowaty Elf, cały Ty. Możesz wybrać: 1 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player2 = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                             input("skąd pochodzisz: "))
+        elif profession == 2:
+            pass
+
+    elif y == 3:
+        player2 = Dwarf
+        print("uparty jak osioł, hamski kurdupel. Wypisz wymaluj krasnolud. Możesz wybrać: 1 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player2 = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                             input("skąd pochodzisz: "))
+        elif profession == 2:
+            pass
+
+    elif y == 4:
+        player2 = Orc
+        print("nie ma sensu komentowac. Bezmózga kupa dyszącego mięcha zwana orkiem. Możesz wybrać: 1 - Warrior,")
+        profession = int(input("wybierz profesje: "))
+        if profession == 1:
+            player2 = Warrior(input("wpisz imię: "), input("podaj wiek: "), input("podaj płeć: "),
+                             input("skąd pochodzisz: "))
+        elif profession == 2:
+            pass
+
+    return player2
